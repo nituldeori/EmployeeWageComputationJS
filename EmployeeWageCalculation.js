@@ -43,11 +43,22 @@ function getWorkingHours(empCheck){
             return 0;
     }
 }
-let empHrs = 0;
+/*let empHrs = 0;
 let empCheck = Math.floor(Math.random() * 10) %3;
 empHrs = getWorkingHours(empCheck);
 let empWage = empHrs * WAGE_PER_HOUR;
 console.log("Emp Wage: "+empWage);
+*/
+
+//UC 4
+const NUM_OF_WORKING_DAYS = 20;
+let empHrs = 0;
+for (let day = 0; day<NUM_OF_WORKING_DAYS; day++){
+    let empCheck = Math.floor(Math.random() * 10) %3;
+    empHrs += getWorkingHours(empCheck);
+}
+let empWage = empHrs * WAGE_PER_HOUR;
+console.log("Total Hrs: "+empHrs+" Emp Wage: "+empWage);
 /*
 function calcDailyWage(empHrs){
     return empHrs * WAGE_PER_HOUR;
