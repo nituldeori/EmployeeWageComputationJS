@@ -61,6 +61,7 @@ let empWage = empHrs * WAGE_PER_HOUR;
 console.log("Total Hrs: "+empHrs+" Emp Wage: "+empWage);
 */
 // UC 5
+/*
 const MAX_HRS_IN_MONTH = 160;
 const NUM_OF_WORKING_DAYS = 20;
 let totalEmpHrs = 0;
@@ -73,7 +74,8 @@ while (totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
 let empWage = totalEmpHrs * WAGE_PER_HOUR;
 console.log("UC5 - Total Days: "+totalWorkingDays+ 
             " Total Hrs: "+ totalEmpHrs+" Emp Wage: "+empWage);
-/*
+*/
+// UC 6
 function calcDailyWage(empHrs){
     return empHrs * WAGE_PER_HOUR;
 }
@@ -93,7 +95,7 @@ while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
 
 let empWage = calcDailyWage(totalEmpHrs);
 console.log("UC6 - Total Days: "+totalWorkingDays+" Total Hrs: "+totalEmpHrs+" Emp Wage: "+empWage);
-
+/*
 let totEmpWage = 0;
 function sum(dailyWage){
     totalEmpHrs += dailyWage;
