@@ -83,14 +83,34 @@ const MAX_HRS_IN_MONTH = 160;
 const NUM_OF_WORKING_DAYS = 20;
 let totalEmpHrs = 0;
 let totalWorkingDays = 0;
+let empDailyHrsAndWageArr = new Array();
 let empDailyWageArr = new Array();
+let empDailyHrsMap = new Map();
+let empDailyWageMap = new Map();
 
+/*while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
+    totalWorkingDays++;
+    let empCheck = Math.floor(Math.random()*10)%3;
+    let empHrs = getWorkingHours(empCheck);
+    totalEmpHrs += empHrs;
+    empDailyHrsAndWageArr.push({
+        dayNum:totalWorkingDays,
+        dailyHours:empHrs,
+        dailyWage: calcDailyWage(empHrs),
+        toString(){
+            return '\nDay' + this.dayNum + ' => Working Hours is '+this.dailyHours +
+                   ' And Wage Earned = '+this.dailyWage
+        },
+    });
+}*/
 while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
     totalWorkingDays++;
     let empCheck = Math.floor(Math.random()*10)%3;
     let empHrs = getWorkingHours(empCheck);
     totalEmpHrs += empHrs;
     empDailyWageArr.push(calcDailyWage(empHrs));
+    empDailyWageMap.set(totalWorkingDays, calcDailyWage(empHrs));
+    empDailyHrsMap.set(totalWorkingDays, empHrs);
 }
 let empWage = calcDailyWage(totalEmpHrs);
 console.log("UC6 - Total Days: "+totalWorkingDays+" Total Hrs: "+totalEmpHrs+" Emp Wage: "+empWage);
@@ -151,3 +171,59 @@ function totalDaysWorked(numOfDays, dailyWage){
     return numOfDays;
 }
 console.log("UC 7G - Number of Days Emp Worked: "+empDailyWageArr.reduce(totalDaysWorked,0));
+
+//UC 8
+console.log("UC8A - Emp Wage Map totalHrs: "+ Array.from(empDailyHrsMap.values()).reduce(totalWages,0));
+
+//UC 9 Arrow Functions
+
+/*const findTotal = (totalVal, dailyVal) =>{
+    return totalVal + dailyVal;
+}
+let count = 0;
+let totalHours = Array.from(empDailyHrsMap.values()).reduce(findTotal,0);
+let totalSalary = empDailyWageArr.filter(dailyWage => dailyWage>0)
+                  .reduce(findTotal,0);
+console.log("UC9A - Emp Wage with Arrow: "+" Total Hours: "+
+            totalHours + " Total Wages: "+totalSalary);
+
+let nonWorkingDays = new Array();
+let partWorkingDays = new Array();
+let fullWorkingDays = new Array();
+empDailyHrsMap.forEach((value, key ,map) => {
+    if(value == 8) fullWorkingDays.push(key);
+    else if(value ==4 ) partWorkingDays.push(key);
+    else nonWorkingDays.push(key);
+});
+console.log("Full Working Days: "+fullWorkingDays);
+console.log("Part time Working Days: "+partWorkingDays);
+console.log("Non working days: "+nonWorkingDays);
+
+// UC 10 : Objects
+
+console.log("UC 10 Showing daily hours worked and Wage earned: "+empDailyHrsAndWageArr);
+
+// UC 10A to UC 11D Using Object Functions along with Arrow Functions
+
+let totalWages = empDailyHrsAndWageArr
+                 .filter(dailyHrsAndWage => dailyHrsAndWage.dailyWage>0)
+                 .reduce((totalWage, dailyHrsAndWage) => totalWage += dailyHrsAndWage.dailyWage,0);
+let totalHours = empDailyHrsAndWageArr
+                 .filter(dailyHrsAndWage => dailyHrsAndWage.dailyWage>0)
+                 .reduce((totalHours, dailyHrsAndWage) => totalHours += dailyHrsAndWage.dailyHours,0);
+console.log("UC 11A Total Hours: "+totalHours+ " Total Wages: "+totalWages);
+
+process.stdout.write("UC 11B Logging Full Work Days")
+empDailyHrsAndWageArr.filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 8)
+                     .forEach(dailyHrsAndWage => process.stdout.write(dailyHrsAndWage.toString()));
+
+let partWorkingDaysStrArr = empDailyHrsAndWageArr
+                            .filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 4)
+                            .map(dailyHrsAndWage => dailyHrsAndWage.toString());
+console.log("\n UC11C : PartWorkingDaysString "+ partWorkingDaysStrArr);
+
+let noOfWorkingDaysStrArr = empDailyHrsAndWageArr
+                         .filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 0)
+                         .map(dailyHrsAndWage => dailyHrsAndWage.toString());
+console.log("\n UC11D : NoWorkingDaysString "+noOfWorkingDaysStrArr);
+*/
