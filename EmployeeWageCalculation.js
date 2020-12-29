@@ -177,7 +177,7 @@ console.log("UC8A - Emp Wage Map totalHrs: "+ Array.from(empDailyHrsMap.values()
 
 //UC 9 Arrow Functions
 
-/*const findTotal = (totalVal, dailyVal) =>{
+const findTotal = (totalVal, dailyVal) =>{
     return totalVal + dailyVal;
 }
 let count = 0;
@@ -200,7 +200,7 @@ console.log("Part time Working Days: "+partWorkingDays);
 console.log("Non working days: "+nonWorkingDays);
 
 // UC 10 : Objects
-
+/*
 console.log("UC 10 Showing daily hours worked and Wage earned: "+empDailyHrsAndWageArr);
 
 // UC 10A to UC 11D Using Object Functions along with Arrow Functions
