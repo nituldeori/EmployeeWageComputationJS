@@ -203,7 +203,6 @@ console.log("Non working days: "+nonWorkingDays);
 console.log("UC 10 Showing daily hours worked and Wage earned: "+empDailyHrsAndWageArr);
 
 // UC 10A to UC 11D Using Object Functions along with Arrow Functions
-/*
 let totalWages = empDailyHrsAndWageArr
                  .filter(dailyHrsAndWage => dailyHrsAndWage.dailyWage>0)
                  .reduce((totalWage, dailyHrsAndWage) => totalWage += dailyHrsAndWage.dailyWage,0);
@@ -225,4 +224,3 @@ let noOfWorkingDaysStrArr = empDailyHrsAndWageArr
                          .filter(dailyHrsAndWage => dailyHrsAndWage.dailyHours == 0)
                          .map(dailyHrsAndWage => dailyHrsAndWage.toString());
 console.log("\n UC11D : NoWorkingDaysString "+noOfWorkingDaysStrArr);
-*/
