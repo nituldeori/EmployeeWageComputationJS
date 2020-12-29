@@ -88,7 +88,7 @@ let empDailyWageArr = new Array();
 let empDailyHrsMap = new Map();
 let empDailyWageMap = new Map();
 
-/*while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
+while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
     totalWorkingDays++;
     let empCheck = Math.floor(Math.random()*10)%3;
     let empHrs = getWorkingHours(empCheck);
@@ -102,8 +102,8 @@ let empDailyWageMap = new Map();
                    ' And Wage Earned = '+this.dailyWage
         },
     });
-}*/
-while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
+}
+/*while(totalEmpHrs<=MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS){
     totalWorkingDays++;
     let empCheck = Math.floor(Math.random()*10)%3;
     let empHrs = getWorkingHours(empCheck);
@@ -198,13 +198,12 @@ empDailyHrsMap.forEach((value, key ,map) => {
 console.log("Full Working Days: "+fullWorkingDays);
 console.log("Part time Working Days: "+partWorkingDays);
 console.log("Non working days: "+nonWorkingDays);
-
+*/
 // UC 10 : Objects
-/*
 console.log("UC 10 Showing daily hours worked and Wage earned: "+empDailyHrsAndWageArr);
 
 // UC 10A to UC 11D Using Object Functions along with Arrow Functions
-
+/*
 let totalWages = empDailyHrsAndWageArr
                  .filter(dailyHrsAndWage => dailyHrsAndWage.dailyWage>0)
                  .reduce((totalWage, dailyHrsAndWage) => totalWage += dailyHrsAndWage.dailyWage,0);
